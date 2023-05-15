@@ -1,0 +1,10 @@
+.histogram_container_main_button>button{
+    margin: 30px 27.4%;
+    cursor: pointer;
+    background-color: rgb(0, 71, 171);
+    color: whitesmoke;
+    border: none;
+    padding: 16px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+}
