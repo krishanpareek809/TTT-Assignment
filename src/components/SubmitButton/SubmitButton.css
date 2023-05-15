@@ -1,0 +1,13 @@
+.btn{
+    margin: 300px 45%;
+}
+
+.btn>button{
+    cursor: pointer;
+    background-color: rgb(0, 71, 171);
+    color: whitesmoke;
+    border: none;
+    padding: 16px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+}
