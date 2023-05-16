@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Running the App
 
-In the project directory, you can run:
+To run this app in your local system, just simply download the zip and unzip it. After unzip, run the command "npm install" and "npm run dev" in the terminal to get started. Finally, start the server by running the command "npm start" in the terminal.
 
-### `npm start`
+## Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+There are two components in './src/components'
+1. SubmitButton - It is the initial **Submit** button which has an **onClick** event handler, when clicked will navigate to another page by using the **useNavigate** hook of react-router-dom and fetch the contents of https://www.terriblytinytales.com/test.txt.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Histogram - This is the main component which is loaded when the "Submit" button is clicked and contains two functions:
+* **async** function getAndParseWords which is responsible for fetching the content of https://www.terriblytinytales.com/test.txt and then parsing it to get the 20 most frequent words and storing them in a **useState** variable. **useEffect** hook of react-router-dom is used to render the function on browser.
+* function exportCSV which is responsible for exporting the histogram data as a CSV file and let user download it when the **Export** button is clicked.
 
-### `npm test`
+Return part contains the following:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. A React Fragment wrapping up the whole component.
+2. A Submit button which is displayed on initial page load. When it is clicked, the app starts to fetch content from the text file.
+3. Now when the data has been stored in a variable, then only an Export button along with the Bar Chart is shown on the screen, both enclosed in a React Fragment.
+4. Export has an onClick event handler which exports the data into CSV file when clicked and download the file.
+5. Custom Toolkit have been used for external styling.
 
-### `npm run build`
+## Packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. axios package has been used for making HTTP requests, for fetching the contents of the test.txt file.
+2. useEffect hook is used to render the function on browser and useState hook is used for state management and store data in variables.
+3. useNavigate hook of react-router-dom is used to navigate between the pages and { BrowserRouter, Routes, Route } are used for routing the pages.
+4. recharts package, which is a charting library built on react components. It is used here for creating histogram.
+5. papaparse package, which is a powerful CSV parser and exporter. It has been used for exporting the histogram data as a CSV file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Firebase is used for deploying the website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed Link - https://ttt-assignment.web.app/
